@@ -1,24 +1,18 @@
-# client
+#### Bikestore Single Page Application
 
-## Project setup
-```
-npm install
-```
+- Client Application source code for bikestore
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### System Setup
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Update `VUE_APP_API_URL` in the `.env` file
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Run following commands
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  - `npm install`
+  - `npm run serve`
+
+- App will be available `http://localhost:8080`
+
+#### Author
+
+- [@canyucelbal](https://github.com/canyucelbal)

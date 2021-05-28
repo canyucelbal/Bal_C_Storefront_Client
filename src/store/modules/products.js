@@ -20,12 +20,12 @@ const mutations = {
 // ACTIONS
 const actions = {
   async fetchProducts({ commit }, queryString = '') {
-    const url = `http://localhost:3030/api/products?${queryString}`
+    const url = `${process.env.VUE_APP_API_URL}/products?${queryString}`
     const result = await axios.get(url)
     commit('products', result.data.data)
   },
   async fetchSingleProduct({ commit }, productId) {
-    const url = `http://localhost:3030/api/products/${productId}`
+    const url = `${process.env.VUE_APP_API_URL}/products/${productId}`
     const result = await axios.get(url)
     commit('product', result.data.data)
   },

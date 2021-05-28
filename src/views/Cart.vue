@@ -8,7 +8,7 @@
       <div v-for="item of cartItems" :key="item.product.id" class="row">
         <img
           class="image"
-          :src="`http://localhost:3030/api/images/${item.product.image}`"
+          :src="`${baseURL}/images/${item.product.image}`"
           alt="image"
         />
         <div style="padding: 0.5rem">
@@ -79,6 +79,9 @@ export default {
       cartItems: "cart/cartItems",
       itemCount: "cart/itemCount",
     }),
+    baseURL() {
+      return process.env.VUE_APP_API_URL;
+    },
   },
   methods: {
     ...mapActions({

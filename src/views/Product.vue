@@ -6,7 +6,7 @@
       <div class="img-container">
         <img
           class="product-img"
-          :src="`http://localhost:3030/api/images/${product.image}`"
+          :src="`${baseURL}/images/${product.image}`"
           alt="image"
         />
       </div>
@@ -68,10 +68,7 @@
 
     <!--VIDEO-->
     <div class="video-container">
-      <video
-        :src="`http://localhost:3030/api/videos/${product.video}`"
-        controls
-      />
+      <video :src="`${baseURL}/videos/${product.video}`" controls />
     </div>
   </div>
 </template>
@@ -89,6 +86,9 @@ export default {
     }),
     productId() {
       return this.$route.params.id;
+    },
+    baseURL() {
+      return process.env.VUE_APP_API_URL;
     },
   },
   methods: {

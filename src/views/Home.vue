@@ -59,7 +59,7 @@
       <div v-for="product of products" :key="product.id" class="product-card">
         <img
           class="responsive-img"
-          :src="`http://localhost:3030/api/images/${product.image}`"
+          :src="`${baseURL}/images/${product.image}`"
           alt="image"
         />
         <p class="title">
@@ -148,6 +148,9 @@ export default {
         return `category=${this.category}`;
       }
       return "";
+    },
+    baseURL() {
+      return process.env.VUE_APP_API_URL;
     },
   },
   methods: {
